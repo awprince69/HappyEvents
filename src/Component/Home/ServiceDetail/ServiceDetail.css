@@ -1,0 +1,11 @@
+.detailsContainer:hover{
+    box-shadow: 10px 10px 10px lightsteelblue;
+    transform:rotateY(360deg) scale(1.4);
+    z-index: 1;
+    transition: 1s;
+}
+.btnEffect:hover{
+    transform: scale(1.1) rotate(360deg);
+    transition-timing-function: ease-in-out;
+    transition: 0.8s;
+}

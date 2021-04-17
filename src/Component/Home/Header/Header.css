@@ -1,0 +1,6 @@
+.header-container{
+    background-image: url('../../../images/bg2.jpg');
+    height:750px;
+    position:relative;
+    background-size: cover;
+}
