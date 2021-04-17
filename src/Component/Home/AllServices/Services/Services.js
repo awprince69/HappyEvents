@@ -1,6 +1,6 @@
 import React from 'react';
 import ServiceDetail from '../ServiceDetail/ServiceDetail';
-import fakeData from '../../../FakeData/fakeData.json'
+import fakeData from '../../../../FakeData/fakeData.json'
 import { useState } from 'react';
 import { useEffect } from 'react';
 const Services = () => {

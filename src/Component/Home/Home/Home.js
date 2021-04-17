@@ -1,10 +1,10 @@
 import React from 'react';
+import Services from '../AllServices/Services/Services';
 import BusinessInfo from '../BusinessInfo/BusinessInfo';
 import Feature from '../Feature/Feature';
 import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
 import Reviews from '../Reviews/Reviews';
-import Services from '../Services/Services';
 
 const Home = () => {
     return (
