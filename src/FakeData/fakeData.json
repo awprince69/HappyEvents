@@ -1,6 +1,6 @@
 [
     {
-        "_id": 2164632165466,
+        "_id": "2164632165466",
         "title": "Corporate Meetings",
         "img": "https://i.ibb.co/1myR2FC/s1.jpg",
         "time": "4-6 Hours",
@@ -9,7 +9,7 @@
         "price": "$288"
     },
     {
-        "_id": 2164632165467,
+        "_id": "216463214545",
         "title": "Birthday Parties",
         "img": "https://i.ibb.co/1myR2FC/s1.jpg",
         "time": "4-6 Hours",
@@ -18,7 +18,7 @@
         "price": "$288"
     },
     {
-        "_id": 2164632165468,
+        "_id": "2164632456454",
         "title": "Family Celebration",
         "img": "https://i.ibb.co/1myR2FC/s1.jpg",
         "time": "4-6 Hours",

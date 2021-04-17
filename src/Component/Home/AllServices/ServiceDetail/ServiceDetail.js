@@ -4,6 +4,7 @@ import './ServiceDetail.css'
 
 const ServiceDetail = ({ service }) => {
     const { title, img, description, time, person, _id } = service
+    // console.log(title);
     const history = useHistory()
     const handleClick = () => {
         const url=`/service/${_id}`

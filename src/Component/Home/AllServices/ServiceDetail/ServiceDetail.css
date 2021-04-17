@@ -5,7 +5,8 @@
     transition: 1s;
 }
 .btnEffect:hover{
-    transform: scale(1.1) rotate(360deg);
+    transform: scale(1.1) ;
     transition-timing-function: ease-in-out;
     transition: 0.8s;
 }
+/* rotate(360deg) */
