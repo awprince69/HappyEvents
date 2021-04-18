@@ -18,8 +18,8 @@ const ServiceDetail = ({ service }) => {
                     <h5 className="card-title">{title}</h5>
                     <p className="card-text">{description}</p>
                     <div className='d-flex justify-content-between'>
-                        <p ><small style={{ fontWeight: '600' }}>{time}</small></p>
-                        <p><small style={{ fontWeight: '600' }}>{person}</small></p>
+                        <p ><small style={{ fontWeight: '600' }}>{time} Hours</small></p>
+                        <p><small style={{ fontWeight: '600' }}>Up to {person} person</small></p>
                     </div>
                     <div className='text-center btnEffect'>
                         <button onClick={handleClick} className="btn btn-outline-success">Buy Now</button>

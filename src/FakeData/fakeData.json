@@ -3,27 +3,27 @@
         "_id": "2164632165466",
         "title": "Corporate Meetings",
         "img": "https://i.ibb.co/1myR2FC/s1.jpg",
-        "time": "4-6 Hours",
+        "time": "4-6",
         "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iure quas nemo mollitia temporibus accusantium voluptate ab ipsam, eum dolores quasi.",
-        "person": "Up to 150 person",
-        "price": "$288"
+        "person": "150",
+        "price": "288"
     },
     {
         "_id": "216463214545",
         "title": "Birthday Parties",
         "img": "https://i.ibb.co/1myR2FC/s1.jpg",
-        "time": "4-6 Hours",
+        "time": "4-6",
         "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iure quas nemo mollitia temporibus accusantium voluptate ab ipsam, eum dolores quasi.",
-        "person": "Up to 150 person",
-        "price": "$288"
+        "person": "150",
+        "price": "288"
     },
     {
         "_id": "2164632456454",
         "title": "Family Celebration",
         "img": "https://i.ibb.co/1myR2FC/s1.jpg",
-        "time": "4-6 Hours",
+        "time": "4-6",
         "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iure quas nemo mollitia temporibus accusantium voluptate ab ipsam, eum dolores quasi.",
-        "person": "Up to 150 person",
-        "price": "$288"
+        "person": "150",
+        "price": "288"
     }
 ]

@@ -59,7 +59,7 @@ const Order = () => {
 
                 <div className="col-md-8">
                     <h1>Order for {order.title}</h1>
-                    <p>{order.price}</p>
+                    <p>${order.price}</p>
                     <form className='w-50' onBlurCapture={handleSubmit(onSubmit)}>
                         <input className='form-control mb-3' name='name' {...register("name", { required: true })} />
                         {errors.name && <span>This field is required</span>}
