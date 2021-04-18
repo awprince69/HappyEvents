@@ -7,7 +7,9 @@ import ReviewDetails from '../ReviewDetails/ReviewDetails';
 const Reviews = () => {
     const [review, setReview] = useState([])
     useEffect(() => {
-        setReview(reviewData)
+        fetch('https://damp-plateau-40551.herokuapp.com/reviews')
+            .then(res => res.json())
+            .then(data => setReview(data))
     }, [])
     return (
         <section className='my-5 py-5'>

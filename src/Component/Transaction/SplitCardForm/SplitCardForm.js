@@ -53,8 +53,8 @@ const SplitCardForm = ({ handlePayment }) => {
         });
         setPaymentError(payload.error?.message)
         setPaymentSuccessful(payload.paymentMethod?.id)
-        handlePayment(payload.paymentMethod.id, payload.paymentMethod.card.brand)
-        console.log("[PaymentMethod]", payload.paymentMethod.card.brand);
+        handlePayment(payload.paymentMethod?.id, payload.paymentMethod?.card?.brand)
+        // console.log("[PaymentMethod]", payload.paymentMethod.card.brand);
     };
 
     return (
@@ -116,7 +116,7 @@ const SplitCardForm = ({ handlePayment }) => {
                 />
             </label>
             <br />
-            <button type="submit" disabled={!stripe}>
+            <button className="btn btn-outline-info" type="submit" disabled={!stripe}>
                 Pay
       </button>
             <br />

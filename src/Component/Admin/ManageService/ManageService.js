@@ -9,37 +9,35 @@ import { faTrashAlt } from '@fortawesome/free-solid-svg-icons'
 const ManageService = () => {
     const [products, setProducts] = useState([])
     useEffect(() => {
-        // fetch('https://still-sierra-25000.herokuapp.com/products')
-        //     .then(res => res.json())
-        //     .then(data => {
-        //         setProducts(data)
-        //     })
+        fetch('https://damp-plateau-40551.herokuapp.com/services')
+            .then(res => res.json())
+            .then(data => {
+                setProducts(data)
+            })
     }, [])
 
     const handleDelete = (id) => {
-        console.log(id);
-        // fetch(`https://still-sierra-25000.herokuapp.com/delete/${id}`, {
-        //     method: 'DELETE'
-        // })
-        //     .then(res => res.json())
-        //     .then(data => {
-        //         alert("Delete Successfully");
-        //     })
+        fetch(`https://damp-plateau-40551.herokuapp.com/delete/${id}`, {
+            method: 'DELETE'
+        })
+            .then(res => res.json())
+            .then(data => {
+                alert("Delete Successfully");
+            })
     }
 
     const renderProduct = (product, index) => {
-        const { name, weight, price, _id } = product
-        // console.log(_id);
+        const { title, price, _id } = product
         return (
             <tr key={index}>
-                <td>{name}</td>
+                <td>{title}</td>
                 <td>${price}</td>
                 <td><span className='text-danger' onClick={() => handleDelete(_id)}> <FontAwesomeIcon icon={faTrashAlt} /></span></td>
             </tr>
         )
     }
     return (
-        <section className='row'>
+        <section className='row' style={{ width: '200vh' }}>
             <div className='col-md-2'>
                 <AdminSideBar></AdminSideBar>
             </div>

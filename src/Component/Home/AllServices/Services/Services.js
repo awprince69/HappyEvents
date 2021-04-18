@@ -6,7 +6,9 @@ import { useEffect } from 'react';
 const Services = () => {
     const [serviceData,setServiceData]=useState([])
     useEffect(()=>{
-        setServiceData(fakeData)
+       fetch('https://damp-plateau-40551.herokuapp.com/services')
+       .then(res=>res.json())
+       .then(data=>setServiceData(data))
     },[])
     return (
         <section className='services-container mt-5'>

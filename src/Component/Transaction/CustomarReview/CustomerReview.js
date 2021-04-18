@@ -18,18 +18,19 @@ const CustomerReview = () => {
             ImageURL: imageURL
         }
         console.log(eventData);
-        // const url = 'https://still-sierra-25000.herokuapp.com/addProduct'
-        // fetch(url, {
-        //     method: 'POST',
-        //     body: JSON.stringify(eventData),
-        //     headers: {
-        //         'Content-Type': 'application/json'
-        //     }
-        // })
-        //     .then(res => res.json())
-        //     .then(data => {
-        //         alert("Review added Successfully")
-        //     })
+        const url = 'https://damp-plateau-40551.herokuapp.com/addReview'
+        fetch(url, {
+            method: 'POST',
+            body: JSON.stringify(eventData),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log('Review Added');
+                alert("Review added Successfully")
+            })
     };
     const handleImageUpload = event => {
         setFileName(event.target.files[0].name)
@@ -46,15 +47,15 @@ const CustomerReview = () => {
             });
     }
     return (
-        <section className='Container-fluid row'>
+        <section className='Container-fluid row' style={{ width: '200vh' }}>
             <div className='col-md-2'>
                 <ServiceSideBar></ServiceSideBar>
             </div>
-            <div className='col-md-10 d-flex mt-3'>
+            <div className='col-md-10 d-flex mt-3' >
                 <form onSubmit={handleSubmit(onSubmit)}>
-                    <input className='form-control mb-3' {...register("name", { required: true })}  placeholder='Enter Your Name'/>
+                    <input className='form-control mb-3' {...register("name", { required: true })} placeholder='Enter Your Name' />
                     {errors.exampleRequired && <span>This field is required</span>}
-                    <input className='form-control mb-3' {...register("from", { required: true })} placeholder='Your location'/>
+                    <input className='form-control mb-3' {...register("from", { required: true })} placeholder='Your location' />
                     {errors.form && <span>This field is required</span>}
                     <textarea className='form-control' {...register("textArea")} name="textArea" rows="4" cols="50">
                     </textarea>
@@ -64,7 +65,7 @@ const CustomerReview = () => {
                         </label>
                         <input name="addPhoto" id='myInput' type="file" onChange={handleImageUpload} style={{ display: 'none' }} />
                     </div>
-                    <button className='btn btn-info' type="submit"> Submit </button>
+                    <button disabled={imageURL ? '' : "true"} className='btn btn-info' type="submit"> Submit </button>
                 </form>
             </div>
         </section>

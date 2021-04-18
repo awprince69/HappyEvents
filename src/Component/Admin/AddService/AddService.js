@@ -11,7 +11,7 @@ const AddService = () => {
     const [imageURL, setImageURL] = useState(null)
     const [fileName, setFileName] = useState('Upload Image');
     const onSubmit = (data) => {
-        // console.log(data);
+
         const eventData = {
             title: data.title,
             time: data.time,
@@ -20,19 +20,19 @@ const AddService = () => {
             description: data.textArea,
             ImageURL: imageURL
         }
-        console.log(eventData);
-        // const url = 'https://still-sierra-25000.herokuapp.com/addProduct'
-        // fetch(url, {
-        //     method: 'POST',
-        //     body: JSON.stringify(eventData),
-        //     headers: {
-        //         'Content-Type': 'application/json'
-        //     }
-        // })
-        //     .then(res => res.json())
-        //     .then(data => {
-        //         alert("Product added Successfully")
-        //     })
+        const url = 'https://damp-plateau-40551.herokuapp.com/addService'
+        fetch(url, {
+            method: 'POST',
+            body: JSON.stringify(eventData),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log('product added');
+                alert("Product added Successfully")
+            })
     };
     const handleImageUpload = event => {
         setFileName(event.target.files[0].name)
@@ -48,7 +48,7 @@ const AddService = () => {
             });
     }
     return (
-        <section className='row' style={{width:'200vh'}}>
+        <section className='row' style={{ width: '200vh' }}>
             <div className='col-md-2'>
                 <AdminSideBar></AdminSideBar>
             </div>
@@ -79,7 +79,7 @@ const AddService = () => {
                             </div>
                             <div className="form-row spaceInput">
                                 <div className="form-group col-md-5 spaceBetween">
-                                    <textarea className='form-control' name="textArea" {...register("textArea")}  rows="4" cols="50">
+                                    <textarea className='form-control' name="textArea" {...register("textArea")} rows="4" cols="50">
                                     </textarea>
                                 </div>
                                 <div className="form-group col-md-1 mx-2 ">
@@ -89,7 +89,7 @@ const AddService = () => {
                                     <input name="addPhoto" id='myInput' type="file" onChange={handleImageUpload} style={{ display: 'none' }} />
                                 </div>
                             </div>
-                            <Button disabled={imageURL ? '' : "true"} className='submitButton' variant='outline-success' type="submit">Save</Button>
+                            <Button disabled={imageURL ? '' : "true"} className='submitButton' variant='success' type="submit">Save</Button>
                         </form>
                     </div>
                 </div>

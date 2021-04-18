@@ -3,8 +3,8 @@ import {useHistory } from 'react-router-dom';
 import './ServiceDetail.css'
 
 const ServiceDetail = ({ service }) => {
-    const { title, img, description, time, person, _id } = service
-    // console.log(title);
+    const { title, ImageURL, description, time, person, _id } = service
+    console.log(title);
     const history = useHistory()
     const handleClick = () => {
         const url=`/service/${_id}`
@@ -13,7 +13,7 @@ const ServiceDetail = ({ service }) => {
     return (
         <div className="col-md-4 mb-4">
             <div className="card detailsContainer" style={{ width: "20rem", border: '0px' }}>
-                <img src={img} className="card-img-top" alt="..." />
+                <img src={ImageURL} className="card-img-top" alt="..." />
                 <div className="card-body">
                     <h5 className="card-title">{title}</h5>
                     <p className="card-text">{description}</p>

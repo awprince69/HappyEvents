@@ -2,22 +2,28 @@ import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import ServiceSideBar from '../ServiceSideBar/ServiceSideBar';
-import fakeData from '../../../FakeData/fakeData.json'
 import CheckListItem from '../CheckListItem/CheckListItem';
+import { useContext } from 'react';
+import { UserContext } from '../../../App';
 
 const CheckList = () => {
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext)
     const [orderedItem, setOrderedItem] = useState([])
     useEffect(() => {
-        setOrderedItem(fakeData)
+        const url = `https://damp-plateau-40551.herokuapp.com/allOrdered?email=${loggedInUser.email}`;
+        console.log(url);
+        fetch(url)
+            .then(res => res.json())
+            .then(data => {
+                // console.log('data', data);
+                setOrderedItem(data)
+            })
     }, [])
     return (
-        <section className='Container-fluid row'>
-            <div className='col-md-2'>
-                <ServiceSideBar></ServiceSideBar>
-            </div>
-            <div>
-                <h3>Check List</h3>
-                <div className='col-md-10 d-flex mt-3'>
+        <section>
+            <ServiceSideBar></ServiceSideBar>
+            <div className=' container px-5 d-flex justify-content-center'>
+                <div className=' row mt-2 pt-1'>
                     {
                         orderedItem.map(ordered => <CheckListItem key={ordered._id} ordered={ordered}></CheckListItem>)
                     }

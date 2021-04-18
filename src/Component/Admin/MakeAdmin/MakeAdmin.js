@@ -5,6 +5,17 @@ const MakeAdmin = () => {
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const onSubmit = data => {
         console.log(data);
+        fetch('https://damp-plateau-40551.herokuapp.com/addAdmin', {
+            method: 'POST',
+            body: JSON.stringify(data),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+            .then(res => res.json())
+            .then(data => {
+                alert("Admin added Successfully")
+            })
     };
     return (
         <section className='row'>
