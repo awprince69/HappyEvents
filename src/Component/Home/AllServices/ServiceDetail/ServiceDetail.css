@@ -9,4 +9,14 @@
     transition-timing-function: ease-in-out;
     transition: 0.8s;
 }
-/* rotate(360deg) */
+@media  (max-width: 688px){
+    .detailsContainer:hover{
+        box-shadow: 10px 10px 10px lightsteelblue;
+        transform: rotateY(0deg) scale(1.1);
+        z-index: 1;
+        transition: 1s;
+    }
+    .buyButton{
+        margin-right: 35px;
+    }
+}

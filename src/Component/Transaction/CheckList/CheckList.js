@@ -5,6 +5,7 @@ import ServiceSideBar from '../ServiceSideBar/ServiceSideBar';
 import CheckListItem from '../CheckListItem/CheckListItem';
 import { useContext } from 'react';
 import { UserContext } from '../../../App';
+import AdminSideBar from '../../Admin/AdminSideBar/AdminSideBar';
 
 const CheckList = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext)
@@ -21,8 +22,8 @@ const CheckList = () => {
     }, [])
     return (
         <section>
-            <ServiceSideBar></ServiceSideBar>
-            <div className=' container px-5 d-flex justify-content-center'>
+            <AdminSideBar></AdminSideBar>
+            <div className=' container d-flex justify-content-center' style={{ marginLeft: '33vh' }}>
                 <div className=' row mt-2 pt-1'>
                     {
                         orderedItem.map(ordered => <CheckListItem key={ordered._id} ordered={ordered}></CheckListItem>)

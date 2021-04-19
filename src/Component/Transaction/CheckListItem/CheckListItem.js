@@ -2,12 +2,12 @@ import React from 'react';
 
 const CheckListItem = ({ ordered }) => {
     return (
-        <div className='col-md-4 mb-4' >
-            <div className='card' style={{ width: '19rem'}}>
+        <div className='col-md-4 mb-4'>
+            <div className='card' style={{ width: '19rem' }}>
                 <div className=' d-flex justify-content-between px-2 py-2'>
-                    <img style={{borderRadius:'5px'}} src={ordered.image} alt="" width='80' />
+                    <img style={{ borderRadius: '5px' }} src={ordered.image} alt="" width='80' />
                     <div>
-                        <button className='btn btn-success'>status</button>
+                        <button className='btn btn-outline-info'>{ordered.process}</button>
                     </div>
                 </div>
                 <div className='card-body'>

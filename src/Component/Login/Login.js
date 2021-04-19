@@ -2,10 +2,12 @@ import React from 'react';
 import firebase from "firebase/app";
 import "firebase/auth";
 import { firebaseConfig } from './firebase.config';
-import { Button } from 'react-bootstrap';
 import { useHistory, useLocation } from 'react-router';
 import { useContext } from 'react';
 import { UserContext } from '../../App';
+import './Login.css'
+import logo from '../../images/Login/icon/google.png'
+import { Button } from 'react-bootstrap';
 
 if (!firebase.apps.length) {
     firebase.initializeApp(firebaseConfig);
@@ -38,8 +40,8 @@ const Login = () => {
             });
     }
     return (
-        <div className="loginContainer">
-            <Button className="loginButton" variant="outline-success" onClick={googleSignIn}>Google</Button>
+        <div className="loginContainer text-center">
+            <button className='loginButton' onClick={googleSignIn}><img src={logo} alt="" width='200'/></button>
         </div>
     );
 };

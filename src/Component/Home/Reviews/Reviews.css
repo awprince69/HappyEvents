@@ -1,0 +1,9 @@
+@media  (max-width: 688px){
+    .review-container{
+        width: 200px;
+    }
+    .review-header{
+        font-size: 2rem;
+        margin-left: 45px;
+    }
+}

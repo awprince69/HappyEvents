@@ -4,6 +4,7 @@ import Friend from '../../../images/icon/support.png'
 import Venue from '../../../images/icon/place.png'
 import Scenario from '../../../images/icon/champagne-glass.png'
 import Time from '../../../images/icon/confetti.png'
+import './BusinessInfo.css'
 
 const BusinessInfo = () => {
     const infoData = [
@@ -33,8 +34,8 @@ const BusinessInfo = () => {
         },
     ]
     return (
-        <section className=" container d-flex justify-content-center mt-5 pt-5 mb-5 ">
-            <div className=" row w-100">
+        <section className=" container  d-flex justify-content-center mt-5 pt-5 mb-5 ">
+            <div className=" row w-100 ">
                 {
                     infoData.map(info => <EventInfo info={info} key={info.title}></EventInfo>)
                 }

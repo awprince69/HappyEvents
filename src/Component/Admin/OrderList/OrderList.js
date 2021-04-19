@@ -1,24 +1,50 @@
 import React, { useEffect, useState } from 'react';
 import { Table } from 'react-bootstrap';
+import { useForm } from 'react-hook-form';
 import AdminSideBar from '../AdminSideBar/AdminSideBar';
 
 const OrderList = () => {
+    const { register, handleSubmit } = useForm();
+    const [optionValue, SetOptionValue] = useState(null);
     const [products, setProducts] = useState([])
+    const [dependency, setDependency] = useState(false);
+
     useEffect(() => {
         fetch('https://damp-plateau-40551.herokuapp.com/orderedList')
             .then(res => res.json())
             .then(data => setProducts(data))
     }, [])
+
+
+    const handleSelectValue = (e, id) => {
+        SetOptionValue(e.target.value);
+        fetch(`https://damp-plateau-40551.herokuapp.com/updateStatus/${id}`, {
+            method: "PATCH",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ optionValue }),
+        })
+            .then((res) => res.json())
+            .then((result) => {
+                alert('Updated Successfully')
+            });
+    };
     const renderProduct = (products, index) => {
-        const { name,product,card, email} = products
-        // console.log(_id);
+        const { name, _id, product, process, card, email } = products
         return (
             <tr key={index}>
                 <td>{name}</td>
                 <td>{email}</td>
                 <td>{product}</td>
                 <td>{card}</td>
-                <td>Pending</td>
+                <td><form>
+                    <select onChange={(e) => handleSelectValue(e, _id)}>
+                        <option defaultValue={process}>{process}</option>
+                        <option defaultValue="Pending">Pending</option>
+                        <option defaultValue="OnGoing">OnGoing</option>
+                        <option defaultValue="Arrived">Arrived</option>
+                    </select>
+                </form>
+                </td>
             </tr>
         )
     }

@@ -37,10 +37,10 @@ function App() {
           <PrivateRoute path='/checkList'>
             <CheckList></CheckList>
           </PrivateRoute>
-          <PrivateRoute path='/review'>
+          <PrivateRoute path='/admin'>
             <CustomerReview></CustomerReview>
           </PrivateRoute>
-          <PrivateRoute path='/admin'>
+          <PrivateRoute path='/orderList'>
             <OrderList></OrderList>
           </PrivateRoute>
           <PrivateRoute path='/addService'>

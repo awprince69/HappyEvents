@@ -30,7 +30,7 @@ const Order = () => {
 
     };
     const handlePaymentSuccessful = (paymentId, card) => {
-
+        const pending = "pending"
         const orderDetails = {
             ...loggedInUser,
             product: order.title,
@@ -39,6 +39,7 @@ const Order = () => {
             shipment: shipmentData,
             paymentId,
             card,
+            process: pending,
             orderTime: new Date()
         }
         console.log(orderDetails);

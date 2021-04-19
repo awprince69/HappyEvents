@@ -1,0 +1,8 @@
+@media  (max-width: 688px){
+    .services-container{
+        margin-right: 0px;
+    }
+    .serviceText{
+        margin-left: 20px;
+    }
+}

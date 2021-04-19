@@ -28,3 +28,25 @@
 .start-button:hover{
     background:rgb(137, 150, 238);
 }
+
+@media  (max-width: 688px){
+    .start-button{
+        background-color: #FF4E50;
+        border: 0px;
+        border-radius: 20px;
+        width: 49%;
+        margin-left: 115px;
+        
+    }
+    .start-button:hover{
+        background:rgb(137, 150, 238);
+    }
+
+    .featureContainer{
+         margin-left: 2px;
+         width: 430px;
+    }
+    .featureText{
+        margin-left: 8px;
+    }
+}

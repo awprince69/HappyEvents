@@ -2,8 +2,8 @@ import axios from 'axios';
 import React from 'react';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import ServiceSideBar from '../ServiceSideBar/ServiceSideBar';
 import upload from '../../../images/icon/photo.png'
+import AdminSideBar from '../../Admin/AdminSideBar/AdminSideBar';
 
 const CustomerReview = () => {
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
@@ -49,7 +49,7 @@ const CustomerReview = () => {
     return (
         <section className='Container-fluid row' style={{ width: '200vh' }}>
             <div className='col-md-2'>
-                <ServiceSideBar></ServiceSideBar>
+                <AdminSideBar></AdminSideBar>
             </div>
             <div className='col-md-10 d-flex mt-3' >
                 <form onSubmit={handleSubmit(onSubmit)}>

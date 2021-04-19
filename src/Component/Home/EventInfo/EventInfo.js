@@ -5,7 +5,7 @@ const EventInfo = ({ info }) => {
     const { icon, title, description, button } = info
     return (
         <div className='col-md-3 '>
-            <div className={''}>
+            <div className={'info-card'}>
                 <div className='mt-5 d-flex justify-content-center mb-5'>
                     <img src={icon} alt="" width='60' />
                 </div>
