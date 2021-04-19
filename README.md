@@ -2,7 +2,7 @@
 
 [Live Site](https://happyevents-d337e.web.app/).
 
-## About of this website
+## About  this website
 * Event Management website
 * Buy event management service
 * Have dynamic review option
